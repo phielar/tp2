@@ -54,11 +54,10 @@ public class DrinkServiceTest {
         Assert.assertTrue(true);
     }
     @Ignore
-    public void testSellDrink() {     
+    public void testSellDrink() {             
         
         Assert.assertEquals(serv.sellDrink(20.00, 8.00), 12, 0.0, "Check change amount after a drink sale.");
-    }
-    
+    }  
     
   
     @BeforeClass

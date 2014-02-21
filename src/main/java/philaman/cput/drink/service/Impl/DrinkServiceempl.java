@@ -46,10 +46,7 @@ public class DrinkServiceempl implements DrinkService{
         return new DrinkServiceempl(item, ml, d, i)  ; //To change body of generated methods, choose Tools | Templates.
     }       
 
-    @Override
-    public List uniqueFlavours() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     
 }
