@@ -37,7 +37,8 @@ public class DrinkServiceempl implements DrinkService{
     }
 
     @Override
-    public int addSOH(int i, int b) {
+    public int addSOH(int i,int b) {
+        
         return i+b; //To change body of generated methods, choose Tools | Templates.
     }
 

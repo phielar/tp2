@@ -12,12 +12,10 @@ import java.util.*;
  *
  * @author student
  */
-public interface DrinkService {
+public interface DrinkService {    
     
-    String flavour[]={"Coke", "Sprite", "Lemon Twist", "Coke zero", "Fanta"};    
-    
-   public double sellDrink(double d, double b);
-    public int addSOH(int i, int b);
+    public double sellDrink(double d, double b);
     public DrinkService addDrink(String item, String cola, String ml, double d, int i);    
+    public int addSOH(int i, int i0);
    
 }

@@ -29,33 +29,47 @@ public class DrinkServiceTest {
     private static List<DrinkService> cans = new ArrayList<>();    
    
     public DrinkServiceTest() {
-       cans.add(serv.addDrink("2123", "Coke", "500ml", 8.00, 20));
-       cans.add(serv.addDrink("2122", "Sprite", "750ml", 10.00, 20));
-       cans.add(serv.addDrink("2121", "Lemon twist", "500ml", 8.00, 20));
+       
     }    
     
-    @Test
+    @Ignore
     public void testAddingSOH()
     {//Method add Stock on hand increases drinks on hand
         Assert.assertEquals(serv.addSOH(3, 40), 43);       
     }
     
-    @Test
+     @Test
     public void AddDrinks()
     {
        cans.add(serv.addDrink("2123", "Coke", "500ml", 8.00, 20));
+       cans.add(serv.addDrink("2122", "Sprite", "750ml", 10.00, 20));
+       cans.add(serv.addDrink("2121", "Lemon twist", "500ml", 8.00, 20));
+       cans.add(serv.addDrink("2123", "Coke", "500ml", 8.00, 20));
+       
        Assert.assertNotNull(cans,"New Drinks added.");
-       Assert.assertEquals(cans.get(1), serv.addDrink("2123", "Coke", "500ml", 8.00, 20));
     }   
-    @Test
+     @Test
     public void testSameObjects()
     {
-        cans.add(serv.addDrink("2101", "Lemon twist", "450ml", 7.50, 20));
-        Assert.assertTrue(true);
+         cans.add(serv.addDrink("2122", "Sprite", "750ml", 10.00, 20));
+       cans.add(serv.addDrink("2121", "Lemon twist", "500ml", 8.00, 20));
+       cans.add(serv.addDrink("2123", "Coke", "500ml", 8.00, 20));
+        Assert.assertSame(cans.get(cans.size()-1), serv.addDrink("2101", "Lemon twist", "450ml", 7.50, 20));
+                
+    }
+    @Test 
+    public void testTrue()
+    {
+         cans.add(serv.addDrink("2101", "Lemon twist", "450ml", 7.50, 20));        
+         Assert.assertTrue(!cans.isEmpty());
+    }
+    @Test
+    public void testfail()
+    {
+        Assert.fail("test fail");
     }
     @Ignore
-    public void testSellDrink() {             
-        
+    public void testSellDrink() {            
         Assert.assertEquals(serv.sellDrink(20.00, 8.00), 12, 0.0, "Check change amount after a drink sale.");
     }  
     
